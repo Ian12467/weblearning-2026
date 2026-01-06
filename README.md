@@ -235,4 +235,83 @@ While this looks like a normal Wiki, you are building the foundation for your po
 This future upgrade will use **Semantic Search** to understand meaning (e.g., searching for "snake coding language" would still find "Python" because the AI understands the context).
 For now: Just get the basic Python logic working!
 
+---
+# Week 3: The Data Layer (SQL, Models, & Migrations)
 
+**Theme:** You are moving from basic logic into Data Management and User Interaction.
+
+In the professional world, the database is the most important part of an app.
+* If your code breaks, you fix it.
+* If your database is designed poorly, the company loses money.
+
+---
+
+## 📅 Weekly Schedule
+
+### **Monday: The Big Lecture (SQL)**
+**Focus:** Understanding how data relates to other data.
+
+**Action Items (2-3 Hours):**
+1.  **Lecture:** Watch **Lecture 4: SQL, Models, and Migrations**.
+2.  **Key Concept:** Pay close attention to "Many-to-One" and "Many-to-Many" relationships.
+    * *Example:* A User has *many* Bids (One-to-Many).
+3.  **Theory:** Understand *why* we use Django Models (Python classes) instead of writing raw SQL queries manually.
+
+
+
+### **Tuesday: Designing Databases**
+**Focus:** Hands-on with the ORM (Object-Relational Mapper).
+
+**Action Items (2-3 Hours):**
+1.  **Practice:** Create a `models.py` file. define a simple class like `Product`.
+2.  **Migrations:** Run your first migrations to create the actual database tables:
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+3.  **Admin:** Use the Django Admin interface (`/admin`) to manually add data to your database without writing code.
+
+
+
+### **Wednesday: Project 2 - Commerce (Setup)**
+**Focus:** Architecture and Schema Design.
+
+**Action Items (2-3 Hours):**
+1.  **Start:** Download the distribution code for **Project 2: Commerce** (eBay clone).
+2.  **Design:** Define your models in `models.py`. You will need at least:
+    * `AuctionListing`
+    * `Bid`
+    * `Comment`
+    * `Category`
+3.  **Pro Tip:** Draw your database schema on paper first! It saves hours of rewriting code later.
+
+### **Thursday: Authentication & Listings**
+**Focus:** User interaction and Forms.
+
+**Action Items (2-3 Hours):**
+1.  **Auth:** Implement User Login/Register.
+    * *Note:* Django handles most of this for you, but you need to wire up the templates.
+2.  **Create:** Create the "Create Listing" page where users can upload an item for auction (Title, Description, Starting Bid, Image URL).
+
+### **Friday: Bidding Logic**
+**Focus:** Business Logic and Validations.
+
+**Action Items (2-3 Hours):**
+1.  **Validation:** Write the Python logic in `views.py` to ensure a new bid is **higher** than the current price. If not, show an error.
+2.  **Watchlist:** Add "Watchlist" functionality so users can toggle items they like (this is a Many-to-Many relationship between User and Listing).
+
+### **Saturday: Commerce - Finish & Polish**
+**Focus:** Closing the loop.
+
+**Action Items (2-3 Hours):**
+1.  **Categories:** Build the "Categories" view (e.g., clicking "Toys" shows all active toy listings).
+2.  **Logic:** Ensure only the **Owner** of a listing can "Close" an auction.
+    * *Winner:* When closed, the highest bidder should be declared the winner.
+3.  **Submit:** Record your video demonstrating functionality and submit.
+
+### **Sunday: Rest & Review**
+**Focus:** Consolidation.
+
+**Action Items:**
+1.  **Review:** Review your SQL knowledge.
+2.  **Git:** Check your GitHub to ensure all your commits from the week are pushed and your contribution graph is green.
