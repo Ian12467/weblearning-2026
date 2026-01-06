@@ -1,5 +1,3 @@
-# weblearning-2026
-
 # Week 1: The Foundation (HTML, CSS, Git, & Python Refresher)
 
 **Goal:** Establish the core web stack fundamentals and refresh Python logic logic to prepare for Django.
