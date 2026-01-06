@@ -108,7 +108,7 @@ You are entering the world of **Back-End Development** using Django. This is the
 
 
 ### **Tuesday: Hello World (The Setup)**
-**Focus:** Configuration. This is often the most frustrating day for beginners—push through it.
+**Focus:** Configuration. This is often the most frustrating day for beginners-push through it.
 
 **Action Items (2-3 Hours):**
 1.  **The Hardest Part:** Set up your virtual environment. Run these commands in your terminal one by one:
@@ -147,7 +147,6 @@ You are entering the world of **Back-End Development** using Django. This is the
 3.  **Refactor:** Make all other HTML pages "extend" this layout.
     * *Why:* This prevents you from copying the navbar code into every single HTML file.
     * *Key Concept:* `{% block body %}`
-
 
 
 ### **Thursday: Project 1 - Wiki (The Setup)**
@@ -204,3 +203,34 @@ venv\Scripts\activate
 
 # Mac/Linux
 source venv/bin/activate
+```
+### 2. Error: `TemplateDoesNotExist`
+* **The Cause:** Django is looking for HTML files, but it doesn't know where your folder is, or the nesting is wrong.
+*	**The Fix:**
+	 1. Check your `settings.py` file. Look at the `TEMPLATES` list and ensure `'APP_DIRS': True` is set.
+    2. 2. Crucial: Ensure your folder structure follows the Django "namespace" pattern:
+   `app_name/templates/app_name/index.html`
+---
+### 3. Issue: `The Markdown isn't converting!`
+*	**The Cause:** Django does not convert Markdown to HTML by default.
+* **The Fix:** You need a specific library.
+1.	Install it:
+```Bash
+pip install markdown2
+```
+2.	Import it in `views.py`:
+```Python
+import markdown2
+```
+3.	Use it:
+```Python
+html_content = markdown2.markdown(entry_content)
+```
+---
+### 🤖 The "AI Twist" for Week 2
+**Context:** While this looks like a normal Wiki, you are building the foundation for your portfolio.
+**Think about this:** > Later, in Month 2, you will replace the standard "Search" function (which just looks for exact text matches like "Python") with an **AI Search**.
+This future upgrade will use **Semantic Search** to understand meaning (e.g., searching for "snake coding language" would still find "Python" because the AI understands the context).
+For now: Just get the basic Python logic working!
+
+
