@@ -187,3 +187,20 @@ You are entering the world of **Back-End Development** using Django. This is the
 1.  **Edit:** This is tricky. You must load an existing page's content into a form `textarea` so the user can edit what is already there.
 2.  **Random Page:** Use Python’s `random` library to pick a random entry from the list and redirect the user there.
 3.  **Submit:** Record your screencast (required for CS50) and submit your project!
+
+## ⚠️ 3 Common "Stuck Points" in Week 2
+**(Read this before you panic)**
+
+### 1. Error: `ModuleNotFoundError: No module named 'django'`
+* **The Cause:** You installed Django, but your VS Code terminal is not looking inside the virtual environment.
+* **The Fix:** Look at your terminal line. If you don't see `(venv)` at the very start, you aren't "logged in" to your environment.
+
+
+
+**Run this command to fix it:**
+```bash
+# Windows
+venv\Scripts\activate
+
+# Mac/Linux
+source venv/bin/activate
