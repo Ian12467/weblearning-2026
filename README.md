@@ -228,8 +228,10 @@ html_content = markdown2.markdown(entry_content)
 ```
 ---
 ### 🤖 The "AI Twist" for Week 2
-**Context:** While this looks like a normal Wiki, you are building the foundation for your portfolio.
-**Think about this:** > Later, in Month 2, you will replace the standard "Search" function (which just looks for exact text matches like "Python") with an **AI Search**.
+**Context:** 
+While this looks like a normal Wiki, you are building the foundation for your portfolio.
+**Think about this:**
+> Later, in Month 2, you will replace the standard "Search" function (which just looks for exact text matches like "Python") with an **AI Search**.
 This future upgrade will use **Semantic Search** to understand meaning (e.g., searching for "snake coding language" would still find "Python" because the AI understands the context).
 For now: Just get the basic Python logic working!
 
