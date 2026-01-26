@@ -1,0 +1,254 @@
+/* --- Global Resets & Variables --- */
+:root {
+    --gray-bg: #f8f9fa;
+    --border-color: #dfe1e5;
+    --text-color: #202124;
+    --blue-btn: #4d90fe;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navigation --- */
+.top-nav {
+    display: flex;
+    justify-content: flex-end; /* Right align on desktop */
+    padding: 15px 20px;
+    align-items: center;
+}
+
+.top-nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Main Layout (Search & Images) --- */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Pushes content to center vertically */
+    padding-bottom: 15vh; /* Visual balance */
+    width: 100%;
+}
+
+.logo-container {
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+}
+
+.logo-container img {
+    max-width: 90%; /* Ensure logo doesn't overflow small screens */
+    height: auto;
+}
+
+/* Image Search Subtext */
+.images-subtext {
+    color: #4285f4;
+    font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, -50%); /* Position slightly outside logo */
+}
+
+/* --- Search Bar --- */
+.search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar {
+    width: 580px;
+    max-width: 90%; /* Responsive limit */
+    height: 44px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    transition: box-shadow 0.2s;
+}
+
+.search-bar:hover, .search-bar:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.search-icon {
+    color: #9aa0a6;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+    height: 100%;
+}
+
+/* --- Buttons --- */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow buttons to stack if needed */
+}
+
+.btn-gray {
+    background-color: var(--gray-bg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-gray:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-color: #dadce0;
+    color: var(--text-color);
+}
+
+/* --- Advanced Search Specifics --- */
+.advanced-header {
+    background: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.advanced-title {
+    color: #d93025;
+    font-size: 20px;
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+.advanced-container {
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.advanced-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center; /* Align vertically in center */
+}
+
+.form-label {
+    width: 200px;
+    font-size: 13px;
+    color: #222;
+    flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.form-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 6px;
+    border: 1px solid #d9d9d9;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--blue-btn);
+}
+
+.btn-blue {
+    background-color: var(--blue-btn);
+    color: white;
+    border: 1px solid #3079ed;
+    border-radius: 2px;
+    font-weight: bold;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 11px;
+    min-width: 120px;
+}
+
+/* --- MEDIA QUERIES (Mobile Responsiveness) --- */
+@media screen and (max-width: 768px) {
+    /* Main Search & Images */
+    .centered-content {
+        margin-top: 40px;
+        padding-bottom: 20px;
+        justify-content: flex-start;
+    }
+
+    .logo-container img {
+        height: 60px; /* Smaller logo */
+    }
+
+    .images-subtext {
+        font-size: 14px;
+    }
+
+    /* Advanced Search Mobile Layout */
+    .advanced-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .advanced-title {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        flex-direction: column; /* Stack label on top of input */
+        align-items: flex-start;
+    }
+
+    .form-label {
+        width: 100%;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .form-input {
+        max-width: 100%; /* Full width inputs on mobile */
+    }
+
+    /* Adjust button alignment in advanced search */
+    .btn-blue {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 12px;
+    }
+}
